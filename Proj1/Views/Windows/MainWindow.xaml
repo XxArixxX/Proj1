@@ -12,6 +12,40 @@
         <vm:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Exit"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="About program"></MenuItem>
+                </MenuItem>
+            </Menu>
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem MinWidth="100" MaxWidth="300">
+                    <TextBlock Text="|||"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <ProgressBar Width="120" Height="20" Value="{Binding progressLine}"></ProgressBar>
+                </StatusBarItem>
+            </StatusBar>
+            <TabControl>
+                <TabItem Header="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="29*"/>
+                            <RowDefinition Height="165*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="157*"/>
+                            <ColumnDefinition Width="637*"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Grid.Column="0" Grid.Row="0" Fill="Aqua"></Rectangle>
+                        <Ellipse Grid.Column="1" Grid.Row="0" Fill="Red"></Ellipse>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="2"></TabItem>
+            </TabControl>
+        </DockPanel>
     </Grid>
 </Window>
