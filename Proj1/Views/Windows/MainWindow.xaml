@@ -22,7 +22,7 @@
                 </MenuItem>
             </Menu>
             <StatusBar DockPanel.Dock="Bottom">
-                <StatusBarItem MinWidth="100" MaxWidth="300">
+                <StatusBarItem MinWidth="100" MaxWidth="200">
                     <TextBlock Text="|||"/>
                 </StatusBarItem>
                 <StatusBarItem>
