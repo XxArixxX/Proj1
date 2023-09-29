@@ -10,6 +10,7 @@ namespace Proj1.ViewModels
     internal class MainWindowViewModel : ViewModel
     {
         private string _title = "Analize stats CV19";
+        private string _downText = "|||";
         private int _progressLine = 30;
 
         public string title
@@ -38,6 +39,20 @@ namespace Proj1.ViewModels
             //   Set(ref _title, value);
             //}
             set => Set(ref _progressLine, value);
+        }
+
+        public string downText
+        {
+            get => _downText;
+            // set
+            //{
+            // if (Equals(_title, value)) return;
+            // _title = value;
+            // OnPropertyChanged();
+
+            //   Set(ref _title, value);
+            //}
+            set => Set(ref _downText, value);
         }
     }
 }
