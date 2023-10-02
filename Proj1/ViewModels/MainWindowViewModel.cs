@@ -54,5 +54,11 @@ namespace Proj1.ViewModels
             //}
             set => Set(ref _downText, value);
         }
+
+        #region Status : string - Program status
+        private string _Status = "Ready!";
+
+        public string Status { get => _Status; set => Set(ref _Status, value); }
+        #endregion
     }
 }
