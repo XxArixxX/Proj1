@@ -26,7 +26,7 @@
                     <TextBlock Text="{Binding Status}"/>
                 </StatusBarItem>
                 <StatusBarItem>
-                    <ProgressBar Width="120" Height="20" Value="{Binding progressLine}"></ProgressBar>
+                    <ProgressBar Width="150" Height="20" Value="{Binding progressLine}"></ProgressBar>
                 </StatusBarItem>
             </StatusBar>
             <TabControl>
