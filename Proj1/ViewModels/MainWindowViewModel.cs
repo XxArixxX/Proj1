@@ -1,9 +1,12 @@
-﻿using Proj1.ViewModels.Base;
+﻿using Proj1.Infrastracture.Commands;
+using Proj1.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Proj1.ViewModels
 {
@@ -60,5 +63,22 @@ namespace Proj1.ViewModels
 
         public string Status { get => _Status; set => Set(ref _Status, value); }
         #endregion
+
+        #region Myregion
+        public ICommand CloseApplicationCommand { get; }
+
+        private void OnCloseApplicationCommandExecuted(object p)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+        #endregion
+        public MainWindowViewModel()
+        {
+            #region commands
+            CloseApplicationCommand = new LambdaCommands(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+            #endregion
+        }
     }
 }
