@@ -73,7 +73,7 @@ namespace Proj1Console
             //var dates = GetDates();
             //Console.WriteLine(string.Join("\r\n", dates));
 
-            var russia_data = GetData().First(v => v.Country.Equals("", StringComparison.OrdinalIgnoreCase));
+            var russia_data = GetData().First(v => v.Country.Equals("China", StringComparison.OrdinalIgnoreCase));
             Console.Write(string.Join("\r\n", GetDates().Zip(russia_data.Counts, (date, count) => $"{date:dd:MM} - {count}")));
             Console.ReadLine();
 

@@ -1,4 +1,5 @@
-﻿using Proj1.Infrastracture.Commands;
+﻿using OxyPlot;
+using Proj1.Infrastracture.Commands;
 using Proj1.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,10 @@ namespace Proj1.ViewModels
         private string _downText = "|||";
         private int _progressLine = 30;
 
+        private IEnumerable<DataPoint> _TestDataPoints;
+        public IEnumerable<DataPoint> TestDataPoints { 
+            get => _TestDataPoints; 
+            set => Set(ref _TestDataPoints, value); }
         public string title
         {
             get => _title;
@@ -79,6 +84,18 @@ namespace Proj1.ViewModels
             #region commands
             CloseApplicationCommand = new LambdaCommands(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             #endregion
+
+            var data_points = new List<DataPoint>((int)(360 / 0.1));
+            for(var x = 0d; x<= 360; x+= 0.1)
+            {
+                const double to_rad = Math.PI / 100;
+                var y = Math.Sin(2 * Math.PI * x * to_rad);
+
+                data_points.Add(new DataPoint { XValue = x, YValue = y });
+            
+            }
+
+            TestDataPoints = data_points;
         }
     }
 }
