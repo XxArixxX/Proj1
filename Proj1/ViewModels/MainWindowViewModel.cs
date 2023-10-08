@@ -91,7 +91,7 @@ namespace Proj1.ViewModels
                 const double to_rad = Math.PI / 100;
                 var y = Math.Sin(2 * Math.PI * x * to_rad);
 
-                data_points.Add(new DataPoint { XValue = x, YValue = y });
+                data_points.Add(item: new DataPoint { XValue = x, YValue = y });
             
             }
 
